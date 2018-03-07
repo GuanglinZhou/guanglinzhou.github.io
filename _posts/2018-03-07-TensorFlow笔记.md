@@ -1,13 +1,13 @@
 
 ---
 layout:     post
-title:      "Hello 2015"
-subtitle:   "Hello World, Hello Blog"
-date:       2015-01-29 12:00:00
-author:     "Hux"
+title:      "TensorFlow笔记"
+subtitle:   "《Tensorflow实战Google深度学习框架》"
+date:       2018-03-07 12:00:00
+author:     "guanglinzhou"
 header-img: "img/post-bg-2015.jpg"
 tags:
-    - Life
+    - TensorFlow
 ---
 
 #### Tensorflow实战Google深度学习框架笔记
