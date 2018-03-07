@@ -1,15 +1,3 @@
-
----
-layout:     post
-title:      "TensorFlow笔记"
-subtitle:   "《Tensorflow实战Google深度学习框架》"
-date:       2018-03-07 12:00:00
-author:     "guanglinzhou"
-header-img: "img/post-bg-2015.jpg"
-tags:
-    - TensorFlow
----
-
 #### Tensorflow实战Google深度学习框架笔记
 @(Tensorflow)
 
