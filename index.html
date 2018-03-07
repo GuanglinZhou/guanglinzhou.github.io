@@ -39,4 +39,12 @@ description: ""
     </li>
     {% endif %}
 </ul>
+
+<!-- Tag -->
+<ul class="tags">
+{% for tag in post.tags %}
+  <li><a href="/tags#{{ tag }}" class="tag">{{ tag }}</a></li>
+{% endfor %}
+</ul>
+
 {% endif %}
