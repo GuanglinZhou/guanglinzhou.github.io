@@ -48,7 +48,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: guanglinzhou
 
 # Netease setttings
 netease_comment: false
@@ -68,7 +68,7 @@ netease_comment: false
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "代码 & 健身"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-guanglinzhou.jpeg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
