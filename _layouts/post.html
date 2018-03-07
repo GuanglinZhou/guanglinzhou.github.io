@@ -90,13 +90,6 @@ layout: default
                     {% endif %}
                 </ul>
 
-                <ul class="tags">
-                    {% for tag in page.tags %}
-                        <li><a href="/tags#{{ tag }}" class="tag">{{ tag }}</a></li>
-                    {% endfor %}
-                </ul>
-
-
                 {% if site.disqus_username %}
                 <!-- disqus 评论框 start -->
                 <div class="comment">
