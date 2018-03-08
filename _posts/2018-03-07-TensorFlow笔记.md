@@ -5,12 +5,14 @@ subtitle:   "《Tensorflow实战Google深度学习框架》"
 date:       2018-03-07 12:00:00
 author:     "guanglinzhou"
 header-img: "img/post-bg-2015.jpg"
+header-mask:  0.3
+catalog:      true
 tags:
-    - TensorFlow，DL
+    - TensorFlow
+    - DL
 ---
 
-#### Tensorflow实战Google深度学习框架笔记
-@(Tensorflow)
+### Tensorflow实战Google深度学习框架笔记
 
 
 ----------
@@ -19,11 +21,16 @@ tags:
 
 TensorFlow中的三个模型——计算模型（图Graph），数据模型（张量Tensor），运行模型（会话Session）
 先简单介绍一下三个模型是什么，再记一下它们之间是如何协作的。
+
+
 **计算模型（图Graph）**
 首先，计算图Graph定义了一个“作用域”，不同图之间的张量和运算不会共享，可以通过`tf.Graph`函数来生成新的计算图。
 TensorFlow中每个计算都是计算图上的一个节点，节点之间的边描述计算之间的依赖关系。（`计算图上每个节点都是一个运算`）
 
+
 TensorFlow会把程序中定义的计算自动转化为计算图上的节点这种形式，系统会维护一个默认的计算图(`tf.get_default_graph()`)<也可以自己生成新的计算图。
+
+
 **数据模型（张量Tensor）**
 在TensorFlow中，所有数据都是通过张量的形式来表示，可以将tensor理解为多维数组：
 
@@ -35,7 +42,7 @@ TensorFlow会把程序中定义的计算自动转化为计算图上的节点这�
 其实张量只是对计算结果的`引用`，本身并没有保存任何值。
 ```python
 	import tensorflow as tf
-    a = tf.constant([1, 2], dtype=tf.int8, name='a')
+	a = tf.constant([1, 2], dtype=tf.int8, name='a')
 	b = tf.constant([3, 4], dtype=tf.int8, name='b')
 	result = a + b
 	print(result)
@@ -43,31 +50,32 @@ TensorFlow会把程序中定义的计算自动转化为计算图上的节点这�
 ```
 
 但可以通过在会话Session中`tf.Session().run(tensor_name)`来得到张量引用的计算结果。
+
+
 **运行模型（会话Session）**
 TensorFlow程序分为两阶段，第一阶段是定义计算图中所有的计算，第二阶段是通过会话Session执行计算。
 一般使用会话需要显示的调用会话生成函数和会话关闭函数，因为（会话管理TensorFlow程序运行时的所有资源，计算完成之后需要关闭会话来释放资源，如果会话没有关闭会出现资源泄漏的问题）。
-
-    sess=tf.Session()
+```python
+	sess=tf.Session()
 	sess.run(tensor_name)
 	sess.close()
-
+```
 可以使用Python的上下文管理工具，避免因为忘记关闭会话或者因为异常情况导致关闭会话函数没有执行的情况。
-
+```python
     with tf.Session() as sess:
 	    sess.run()
-
-
+```
 ----------
 了解了TensorFlow这三个模型，就可以愉快的开始编写TensorFlow程序了。
 接着上文的，简单实现个相加代码。
-
-    import tensorflow as tf
-    a=tf.constant([1.0,2.0],name='a')
-    b=tf.constant([3.0,4.0],name='b')
-    result=a+b
-    with tf.Session() as sess:
+```python
+	import tensorflow as tf
+	a=tf.constant([1.0,2.0],name='a')
+	b=tf.constant([3.0,4.0],name='b')
+	result=a+b
+	with tf.Session() as sess:
 	    sess.run(result)
-	    	   
+```   
 
 ----------
 **TensorFlow实现三层全连接神经网络**
@@ -156,7 +164,10 @@ TensorFlow中提供了7种不同的非线性函数，
 从前面描述可知，当使用全连接神经网络来处理图像数据时，网络的参数是非常多的，多的难以进行训练，即使训练好了也会有过拟合的风险。
 对5* 5的图像，使用500个隐层，参数个数为5* 5* 500+500=13000个参数，如果是5个3* 3的卷积核，需要3* 3* 5+5=50个参数。
 真的是`巨幅`减少了神经网络中参数。
+
 从上面计算可以发现，卷积层参数个数`只与卷积核的尺寸和深度，以及当前层的深度相关`。
+
+
 我举例的
 - 卷积核尺寸为3*3；
 - 卷积核的深度为5，即使用5个卷积核；
