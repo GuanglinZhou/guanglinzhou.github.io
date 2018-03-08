@@ -56,11 +56,20 @@ netease_comment: false
 
 
 # Analytics settings
-# Baidu Analytics 
-# ba_track_id: [your track id]
+Baidu Analytics 
+ba_track_id: <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f1d12c61becbd709715ddc07cf602b52";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
-# Google Analytics
-#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+
+Google Analytics
+ga_track_id: 'UA-115308937-1'            # Format: UA-xxxxxx-xx
 #ga_domain: huangxuan.me
 
 
