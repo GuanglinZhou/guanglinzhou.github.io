@@ -68,7 +68,7 @@ ga_track_id: 'UA-115308937-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "James Zhou Blog, 博客, 个人网站, 热爱互联网"
+sidebar-about-description: "ML&DL 热爱互联网"
 sidebar-avatar: /img/avatar-guanglinzhou.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
