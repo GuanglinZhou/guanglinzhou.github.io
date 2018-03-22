@@ -1,7 +1,8 @@
 # Site settings
 title: James Zhou Blog
 SEOTitle: 周光临的博客 | James Zhou Blog
-header-img: img/home-bg.jpg
+# header-img: img/home-bg.jpg
+header-img: img/jamie.jpg
 email: jameszhou.ustc@gmail.com
 description: "Cool Blog"
 keyword: "James Zhou Blog, 博客, 个人网站, 互联网, 热爱机器学习"
