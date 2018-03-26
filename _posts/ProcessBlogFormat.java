@@ -19,7 +19,13 @@ public class ProcessBlogFormat {
 
     public void processBlog(String path) {
         File fileRead = new File(path);
-        File fileWrite = new File("wt_" + path);
+        StringBuilder stringBuilder = new StringBuilder(path);
+        int initLength = path.length();
+        stringBuilder.insert(initLength - 3, "_github");
+        String pathNew = stringBuilder.toString();
+        File fileWrite = new File(pathNew);
+        //用于判断$$符号是在前面还是后面
+        int index = 0;
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileRead));
             try {
@@ -33,12 +39,22 @@ public class ProcessBlogFormat {
                             if (s.charAt(i) == '$' && s.charAt(i + 1) != '$') {
                                 bufferedWriter.write("$$");
                             } else if (s.charAt(i) == '$' && s.charAt(i + 1) == '$') {
-                                bufferedWriter.write('$');
+                                index++;
+                                if (index % 2 == 1) {
+                                    bufferedWriter.write("\n");
+                                } else {
+                                    bufferedWriter.write("");
+                                    i += 1;
+                                }
                             } else {
                                 bufferedWriter.write(s.charAt(i));
                             }
                         }
-                        bufferedWriter.write(s.charAt(s.length() - 1));
+                        if (s.charAt(s.length() - 1) == '$') {
+                            bufferedWriter.write("$$");
+                        } else {
+                            bufferedWriter.write(s.charAt(s.length() - 1));
+                        }
                         bufferedWriter.newLine();
 
                     }
@@ -49,10 +65,10 @@ public class ProcessBlogFormat {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //删除将新文件替换旧文件,文件重名直接替换，不用语句删除旧文件
-//            fileRead.delete();
-            fileWrite.renameTo(new File(path));
-            System.out.println("文件格式调整完毕，文件名为：" + path);
+
+            fileWrite.renameTo(new File(pathNew));
+            System.out.println("文件格式调整完毕，文件名为：" + pathNew);
+            System.out.println();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -60,3 +76,5 @@ public class ProcessBlogFormat {
     }
 }
 
+
+///Users/guanglinzhou/Documents/GitHub/guanglinzhou.github.io/_posts/2018-03-25-逻辑回归更新篇.md
