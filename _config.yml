@@ -48,11 +48,18 @@ kramdown:
 
 
 
+
+# # Disqus website
+# layout: default
+# comments: true
+
+
+
 # Disqus settings
 disqus_username: guanglinzhou
 
 # Netease setttings
-netease_comment: true
+netease_comment: false
 
 
 
@@ -69,7 +76,7 @@ ga_track_id: 'UA-115308937-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "ML&DL Java 热爱互联网"
+sidebar-about-description: "一个人的幸福程度，取决于多大程度上可以脱离对外部世界的依赖。"
 sidebar-avatar: /img/avatar-guanglinzhou.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
