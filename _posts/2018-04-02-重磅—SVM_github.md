@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "重磅——SVM"
-subtitle:   "最大似然估计 最大后验估计 朴素贝叶斯 垃圾邮件过滤器"
+subtitle:   "SVM推导 SMO算法 核函数 非线性逻辑回归"
 date:       2018-04-01 08:00:00
 author:     "guanglinzhou"
 header-img: "img/post-bg-alitrip.jpg"
